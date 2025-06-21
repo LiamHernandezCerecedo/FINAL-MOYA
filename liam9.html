@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap-theme.min.css">
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Peliculas</title>
+</head>
+<body>
+<nav class="navbar navbar-light" style="background-color: #db9647;">
+    <div class="contener">
+        <a class="navbar-brand" href="index.html" style="color: rgb(240, 224, 224);">Inicio</a>
+       
+         <div class="collapse navbar-collapse" id="navbarNavDropdown">
+         <ul class="nav navbar-nav">
+           <li class="nav-item dropdown">
+             <a class="nav-link dropdown-toggle" href="" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+               Unidad 1
+             </a>
+
+             <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+               <a class="dropdown-item" href="/liam/liam.php">Practica</a><br>
+               <a class="dropdown-item" href="/liam/liam2.php">Practica 2</a><br>
+               <a class="dropdown-item" href="/liam/liam3.php">Practica 3</a><br>
+              </div>
+           </li>
+           <li class="nav-item dropdown">
+             <a class="nav-link dropdown-toggle" href="" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+               Unidad 2
+             </a>
+
+             <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+               <a class="dropdown-item" href="liam4.php">Practica 4</a><br>
+               <a class="dropdown-item" href="liam5.php">Practica 5</a><br>
+               <a class="dropdown-item" href="liam05.php">Practica 5a</a><br>
+               <a class="dropdown-item" href="liam6.html">Practica 6</a><br>
+              </div>
+           </li>
+           <li class="nav-item dropdown">
+  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    Unidad 3
+  </a>
+  <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+    <a class="dropdown-item" href="liam7.html">Practica 7</a><br>
+    <a class="dropdown-item" href="liam8.html">Practica 8</a><br>
+    <a class="dropdown-item" href="liam9.html">Practica 9</a><br>
+    <a class="dropdown-item" href="/liam/liam10.php">Practica 10</a><br>
+  </div>
+</li>
+         </ul>
+         </div>
+       </div>
+       </nav>    
+    
+    <style>
+        :root{
+          --color-primario: #db9647;
+            --color-secundario: #723223;
+            --tercer-color: #dda07d;
+            --cuarto-color: #dbaa7d; 
+            --quinto-color: #9c6c35;
+        }
+
+        *{
+            box-sizing: border-box;
+        }
+
+        body{
+            background-color: var(--color-secundario);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+        }
+        header{
+            padding: 16px;
+            display: flex;
+            justify-content: flex-end;
+            background-color: var(--color-primario);
+        }
+        .search{
+            background-color: var(--color-primario);
+            border: 5px solid var(--color-cuarto);
+            border-radius: 50px;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            font-size: 15px;
+            padding: 10px 16px;
+            color: var(--color-terciario);
+        }
+        .search::placeholder{
+            color: var(--color-quinto);
+        }
+        .search:focus{
+            outline: none;
+            background-color: var(--color-terciario);
+        }
+        main{
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .personaje{
+            width: 500px;
+            margin: 15px;
+            background-color: var(--color-primario);
+            box-shadow: 10px 15px 1px var(--color-quinto);
+            position: relative;
+            overflow: hidden;
+            border-radius: 10px;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+        }
+        .personaje img{
+            width: 80%;
+            height: 400px;
+            object-fit: contain;
+        }
+        .personaje-info{
+            color: var(--color-cuarto);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 15px;
+            padding: 8px 22215px 15px;
+            letter-spacing: 8px;
+        }
+        .personaje-info h3{
+            color: var(--color-terciario);
+            margin-top: 0;
+            align-items: center;
+        }
+        .personaje-info h1{
+            color: var(--color-primario);
+            margin-top: 0;
+        }
+        .overview{
+            background-color: var(--color-terciario);
+            padding: 15px;
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            max-height: 100%;
+            transform: translateY(101%);
+            overflow-y: auto;
+            transition: transform 1s ease-in;
+        }
+        .personaje:hover .overview{
+            transform: translateY(0);
+        }
+        .logo {
+           width: 130px;
+           height: auto; 
+         object-fit: contain;
+         transform: scale(1.5);
+}
+    </style>
+
+<header>
+    <form id="form">
+   <img src="logo.png" alt="logo" class="logo" style="width: 100px; height: 50px;">
+   <input type="text" id="search" class="search" placeholder="Busca tu personaje">
+</form>
+ </header>
+ <main id="main"></main>
+   <script>
+      const API_HP = 'https://hp-api.onrender.com/api/characters';
+      const API_RICK = 'https://rickandmortyapi.com/api/character';
+      
+      const main = document.getElementById('main');
+      const form = document.getElementById('form');
+      const search = document.getElementById('search');
+
+      getAllCharacters();
+      
+      async function getAllCharacters(){
+       const [rmRes, hpRes] = await Promise.all([
+        fetch(API_RICK).then(res=> res.json()),
+        fetch(API_HP).then(res=> res.json())
+       ]);
+       const rickChars = rmRes.results || [];
+       const hpChars = hpRes || [];
+       showCharacters([...rickChars, ...hpChars]);
+      }
+     function showCharacters(characters){
+       main.innerHTML = '';
+
+       characters.forEach((char) => {
+        
+        let name = char.name || 'Desconocido';
+        let image = char.image || 'Desconocido';
+        let gender = char.gender || 'Desconocido';
+        let specie = char.species || 'Desconocido';
+        let status = char.status || (char.alive === false ? 'Deceased' : 'Alive');
+
+  const{id} = char;
+  const charElement = document.createElement('div');
+ charElement.classList.add('personaje');
+  charElement.innerHTML =`
+  <img src = "${image}" alt="${image}">
+  <div class="personaje-info">
+  <h3>${name}</h3>
+  <br>
+       </div>
+      <div class = "overview">
+       <h3>Datos</h3>
+       <p><strong>Genero: </strong>${gender}</p>
+       <p><strong>Especie </strong>${specie}</p>
+       <p><strong>Estatus:</strong>${status}</p>
+       </div> `
+       main.appendChild(charElement);
+  
+       })}
+       form.addEventListener('submit', (e) =>{
+         e.preventDefault()
+         const searchTerm = search.value.toLowerCase();
+         if(searchTerm && searchTerm !== ''){
+           getCharacters(API_URL + `?name=${searchTerm}`)
+           search.value='';
+         }else{window.location.reload();}
+       })
+
+   </script>
+</body>
+</html>
